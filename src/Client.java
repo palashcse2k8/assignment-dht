@@ -8,7 +8,9 @@ import java.util.Scanner;
 // Client class 
 public class Client  
 { 
-    public static void main(String[] args) throws IOException  
+    String roll_number;
+    static String blockNumber;
+	public static void main(String[] args) throws IOException  
     { 
         try
         { 
@@ -28,29 +30,24 @@ public class Client
             // information between client and client handler 
             while (true)  
             { 
-                System.out.println(dis.readUTF()); 
-                String tosend = scn.nextLine(); 
-                dos.writeUTF(tosend); 
-                  
-                // If client sends exit,close this connection  
-                // and then break from the while loop 
-                if(tosend.equals("Exit")) 
-                { 
-                    System.out.println("Closing this connection : " + s); 
-                    s.close(); 
-                    System.out.println("Connection closed"); 
-                    break; 
-                } 
-                  
-                // printing date or time as requested by client 
-                String received = dis.readUTF(); 
-                System.out.println(received); 
-            } 
+                System.out.println("Roll Number : " + dis.readUTF());
+                blockNumber = dis.readUTF();
+                System.out.println("Block Number : " + blockNumber);
+//                String tosend = scn.nextLine(); 
+                dos.writeUTF(blockNumber);
+//                  
+//                // If client sends exit,close this connection  
+//                // and then break from the while loop 
+//                if(tosend.equals("Exit")) 
+//                { 
+//                    System.out.println("Closing this connection : " + s); 
+//                    s.close(); 
+//                    System.out.println("Connection closed"); 
+//                    break; 
+                }
               
             // closing resources 
-            scn.close(); 
-            dis.close(); 
-            dos.close(); 
+//            scn.close();  
         }catch(Exception e){ 
             e.printStackTrace(); 
         } 
