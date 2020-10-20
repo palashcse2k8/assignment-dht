@@ -9,10 +9,11 @@ public class DriverClass {
 		myServer.start();
 		Thread.sleep(2000);
 		System.out.println("Input Number of Clients to run: ");
-		Singleton.writeToFile("Number of Clients = " + sc.nextInt());
+		int clientNumber = sc.nextInt();
+		Singleton.writeToFile("Number of Clients = " + clientNumber);
 		long startTime = System.nanoTime();
 		
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < clientNumber; i++) {
 			Client clients = new Client();
 //			System.out.println("creating client : " + i);
 			clients.start();
