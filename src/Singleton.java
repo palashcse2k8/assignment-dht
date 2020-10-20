@@ -32,6 +32,14 @@ public class Singleton {
     public synchronized static void writeToFile(String str) {
     	writeUsingBufferedWriter(str);
     }
+    
+    public static void removeFile() {
+        if (file.delete()) {
+//            System.out.println("Deleted the file: " + file.getName());
+        } else {
+//            System.out.println("Failed to delete the file.");
+        }
+    }
 
 //    public static Singleton getInstance() {
 //        return inst;
