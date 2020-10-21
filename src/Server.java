@@ -12,7 +12,7 @@ public class Server extends Thread
 	}
 	
     public static int clientCount = 0;
-    public static int blockNumbers [] = new int [10];
+    public static int blockNumbers [] = new int [1024];
     public static long startTime;
     
     //set roll number text

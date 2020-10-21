@@ -15,6 +15,7 @@ public class DriverClass {
 		
 		for (int i = 0; i < clientNumber; i++) {
 			Client clients = new Client();
+			Thread.sleep(1000);
 //			System.out.println("creating client : " + i);
 			clients.start();
 		}

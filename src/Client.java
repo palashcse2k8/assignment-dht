@@ -81,7 +81,7 @@ public class Client extends Thread
 //                System.out.println("Block Number : " + blockNumber + ", roll_number:  " + roll_number);
 //                String tosend = scn.nextLine();
                 
-                int range = 1000000;
+                int range = 4194304; //4194304
                 int nonce;
                 
                 String S = "00" + roll_number.substring(roll_number.length() - 3);
